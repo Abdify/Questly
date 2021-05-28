@@ -1,14 +1,10 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Quora from './components/Quora/Quora';
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <Quora />
+    </div>
   );
 }
 
