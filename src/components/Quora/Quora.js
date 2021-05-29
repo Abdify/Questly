@@ -5,7 +5,7 @@ import Post from '../Post/Post';
 const Quora = () => {
     return (
         <div>
-            <Feed></Feed>
+            <Feed />
         </div>
     );
 };
