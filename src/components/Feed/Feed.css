@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 .feed {
     display: flex;
     flex-direction: column;
     flex: 0.6;
   }
+=======
+.feed{
+    flex: 0.6;
+}
+>>>>>>> fahim
