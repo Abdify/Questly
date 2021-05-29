@@ -6,7 +6,7 @@ import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import { MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
 import './Post.css'
-const Post = () => {
+const Post = ({id, question, image, timestamp, quoraUser}) => {
     return (
         <div className="post">
             <div className="post__info">
