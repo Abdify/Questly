@@ -1,9 +1,11 @@
 import React from 'react';
+import QuoraBox from '../QuoraBox/QuoraBox';
+import './Feed.css';
 
 const Feed = () => {
     return (
-        <div>
-            Hello from Feed
+        <div className="feed">
+            <QuoraBox />
         </div>
     );
 };
