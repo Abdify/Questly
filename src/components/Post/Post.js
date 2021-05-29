@@ -1,25 +1,30 @@
 import { Avatar } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
 import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import { MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
 import './Post.css'
+import Modal from "react-modal";
+
+
 const Post = ({id, question, image, timestamp, quoraUser}) => {
     return (
         <div className="post">
             <div className="post__info">
-                <Avatar />
-                <h5>Username</h5>
-                <small>Timestamp</small>
+                <Avatar 
+                    // src={quoraUser.photo}
+                />
+                {/* <h5>{quoraUser.displayName}</h5> */}
+                <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
             </div>
 
             <div className="post__body">
                 <div className="post__question">
                    <p>Question</p>
                    <button className="post__btnAnswer">Answer</button>
-
+                    
                 </div>
 
                 <div className="post_Answer">
