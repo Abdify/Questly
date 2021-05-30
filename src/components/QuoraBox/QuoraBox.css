@@ -1,0 +1,36 @@
+.questlyBox{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.questlyBox:hover{
+    border: 2px solid lightgray;
+}
+
+.questlyBox_info{
+    display: flex;
+    align-items: center;
+}
+
+.questlyBox_info > h5{
+    color: rgb(129, 129, 129);
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.questlyBox_questly{
+    display: flex;
+    margin-top: 8px;
+}
+
+.questlyBox_questly > p{
+    color: gray;
+    font-weight: 300;
+    font-size: large;
+}
+
