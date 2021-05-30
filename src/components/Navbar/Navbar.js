@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
 import { Avatar, Button, Input } from '@material-ui/core';
 import { AssignmentTurnedInOutlined, ExpandMore, FeaturedPlayListOutlined, Home, LanguageOutlined, Link, NotificationsOutlined, PeopleAltOutlined, PeopleOutlineTwoTone, SearchOutlined } from '@material-ui/icons';
-import './Navbar.css';
+import firebase from 'firebase/app';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../Redux/userSlice';
-import firebase from 'firebase/app';
-import db from '../Auth/Firebase/FirebaseConfig';
 import logo from '../../images/logo.png';
+import { selectUser } from '../../Redux/userSlice';
+import db, { auth } from '../Auth/Firebase/FirebaseConfig';
+import './Navbar.css';
 
 const Navbar = () => {
     const user = useSelector(selectUser);
@@ -66,6 +66,7 @@ const Navbar = () => {
                 </div>
                 <LanguageOutlined />
                 <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+                <Button onClick={() => auth.signOut()}>Sign Out</Button>
                 <Modal
                     isOpen={IsmodalOpen}
                     onRequestClose={() => setIsModalOpen(false)}
