@@ -10,7 +10,6 @@ import db from '../Auth/Firebase/FirebaseConfig';
 import logo from '../../images/logo.png';
 
 const Navbar = () => {
-
     const user = useSelector(selectUser);
 
     const [IsmodalOpen, setIsModalOpen] = useState(false);
