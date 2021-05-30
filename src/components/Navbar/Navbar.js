@@ -1,6 +1,6 @@
-import React from 'react';
 import { Avatar, Button } from '@material-ui/core';
 import { AssignmentTurnedInOutlined, FeaturedPlayListOutlined, Home, LanguageOutlined, NotificationsOutlined, PeopleOutlineTwoTone, SearchOutlined } from '@material-ui/icons';
+import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
