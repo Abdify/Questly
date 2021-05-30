@@ -8,31 +8,43 @@ function Feed() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        db.collection("questions")
-            .orderBy("timestamp", "desc")
-            .onSnapshot((snapshot) =>
-                setPosts(
-                    snapshot.docs.map((doc) => ({
-                        id: doc.id,
-                        questions: doc.data(),
-                    }))
-                )
-            );
+        // db.collection("questions")
+        //     .orderBy("timestamp", "desc")
+        //     .onSnapshot((snapshot) =>
+        //         setPosts(
+        //             snapshot.docs.map((doc) => ({
+        //                 id: doc.id,
+        //                 questions: doc.data(),
+        //             }))
+        //         )
+        //     );
+        let newData = [];
+        async function getQuestions(){
+          const questionsRef = db.collection("questions");
+          const snapshot = await questionsRef.get();
+          snapshot.forEach((doc) => {
+              console.log(doc.id, "=>", doc.data());
+              newData.push(doc.data());
+          });
+          
+          setPosts(newData);
+        }
+        getQuestions();
     }, []);
-
     return (
         <div className="feed">
             <QuorBox />
-            {posts.map(({ id, questions }) => (
-                <Post
-                    key={id}
-                    Id={id}
-                    question={questions.question}
-                    imageUrl={questions.imageUrl}
-                    timestamp={questions.timestamp}
-                    users={questions.user}
-                />
-            ))}
+            {posts && posts.map((post) => {
+              console.log(post);
+              return <Post
+                  key={post.id}
+                  Id={post.id}
+                  question={post.question}
+                  imageUrl={post.imageUrl}
+                  timestamp={post.timestamp}
+                  users={post.user}
+              />;
+            })}
         </div>
     );
 }
