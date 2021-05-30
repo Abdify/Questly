@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Avatar, Button } from '@material-ui/core';
-import { AssignmentTurnedInOutlined, FeaturedPlayListOutlined, Home, LanguageOutlined, NotificationsOutlined, PeopleOutlineTwoTone, SearchOutlined } from '@material-ui/icons';
+import { Avatar, Button, Input } from '@material-ui/core';
+import { AssignmentTurnedInOutlined, ExpandMore, FeaturedPlayListOutlined, Home, LanguageOutlined, Link, NotificationsOutlined, PeopleAltOutlined, PeopleOutlineTwoTone, SearchOutlined } from '@material-ui/icons';
 import './Navbar.css';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
-import selectUser from '../../'
+import { selectUser } from '../../Redux/userSlice';
+import firebase from 'firebase/app';
+import db from '../Auth/Firebase/FirebaseConfig';
 
 const Navbar = () => {
 
@@ -97,7 +99,7 @@ const Navbar = () => {
                         />
                         <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
                         <div className="modal__scope">
-                            <PeopleAltOutlinedIcon />
+                            <PeopleAltOutlined />
                             <p>Public</p>
                             <ExpandMore />
                         </div>
