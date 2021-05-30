@@ -39,7 +39,7 @@
 - Feed
 - Post
 
-### Abdullah
+### Abdify
 - Auth
 - Quora
 - QuoraBox
