@@ -19,6 +19,7 @@
 	- Your Questly Home
 
 ## Tools
+	- Firebase
 	- React
 	- Redux
 	- Firebase
@@ -38,7 +39,7 @@
 - Feed
 - Post
 
-### AAbdullah
+### Abdullah
 - Auth
 - Quora
 - QuoraBox
