@@ -18,33 +18,22 @@ function Feed() {
                     }))
                 )
             );
-        // let newData = [];
-        // async function getQuestions(){
-        //   const questionsRef = db.collection("questions");
-        //   const snapshot = await questionsRef.get();
-        //   snapshot.forEach((doc) => {
-        //       console.log(doc.id, "=>", doc.data());
-        //       newData.push(doc.data());
-        //   });
-          
-        //   setPosts(newData);
-        // }
-        // getQuestions();
+
     }, []);
-    // const usersInfoRef = db.collection("questions");
-    // const [posts] = useCollectionData(usersInfoRef, { idField: "id" });
 
     return (
         <div className="feed">
             <QuorBox />
             {
                 posts && posts.map(post => {
+                    console.log(post)
                     return (
                         <Post 
+                        key={post.id}
                         id={post.id}
-                        question={post.question}
-                        imageUrl={post.imageUrl}
-                        timestamp={post.timestamp}
+                        question={post.questions.question}
+                        imageUrl={post.questions.imageUrl}
+                        timestamp={post.questions.timestamp}
                         
                          />
                     )
