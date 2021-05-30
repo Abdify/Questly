@@ -8,12 +8,12 @@ import firebase from "firebase";
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
-import { selectUser } from "../features/userSlice";
-import db from "../firebase";
+import { selectQuestionId, setQuestionInfo } from "../../Redux/questionSlice";
+import { selectUser } from "../../Redux/userSlice";
+import db from "../Auth/Firebase/FirebaseConfig";
 import "./Post.css";
 
-function Post({ Id, question, imageUrl, timestamp, users }) {
+function Post({ Id, question, imageUrl, timestamp }) {
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
 
@@ -64,12 +64,12 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
             <div className="post__info">
                 <Avatar
                     src={
-                        users.photo
-                            ? users.photo
+                        user.photo
+                            ? user.photo
                             : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
                     }
                 />
-                <h4>{users.displayName ? users.displayName : users.email}</h4>
+                <h4>{user.displayName ? user.displayName : user.email}</h4>
                 <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
             </div>
             <div className="post__body">
@@ -100,7 +100,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
                             <p>
                                 asked by{" "}
                                 <span className="name">
-                                    {users.displayName ? users.displayName : users.email}
+                                    {user.displayName ? user.displayName : user.email}
                                 </span>{" "}
                                 {""}
                                 on{" "}
